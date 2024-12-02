@@ -15,6 +15,23 @@ public class MyQueue {
 
 
 
+    public void displayReversed() {
+        Node temp =  front;
+        int[] arr = new int[this.size];
+        // while (temp != null) {
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = temp.data;
+                temp = temp.next;
+            }
+        // }
+
+        for (int i = arr.length; i >= 0 ; i--) {
+            System.out.print(arr[i] + " ");
+        }
+
+        System.out.println();
+    }
+
     public void display() {
         Node temp = front;
         if (isEmpty() == true) {
@@ -48,6 +65,7 @@ public class MyQueue {
             System.out.println("Dequeued value = "+ front.data);
             front = front.next;
         }
+        this.size--;
     }
 
     public boolean isEmpty() {

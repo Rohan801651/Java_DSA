@@ -6,12 +6,9 @@ public class Start {
         q.enqueue(6);
         q.enqueue(9);
 
-        q.dequeue();
-        q.dequeue();
-        q.dequeue();
 
         // System.out.println(q.isEmpty());
-        q.display();
+        q.displayReversed();
 
     }
 }
