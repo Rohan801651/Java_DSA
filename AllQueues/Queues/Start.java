@@ -4,11 +4,10 @@ public class Start {
         q.enqueue(2);
         q.enqueue(3);
         q.enqueue(6);
-        q.enqueue(9);
 
-
-        // System.out.println(q.isEmpty());
         q.displayReversed();
-
+        q.display();
+        
+        System.out.println(q.searchByIndex(2));
     }
 }

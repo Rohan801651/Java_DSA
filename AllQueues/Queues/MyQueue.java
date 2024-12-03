@@ -7,6 +7,7 @@ public class MyQueue {
     public class Node {
         private int data;
         private Node next;
+
         public Node(int data) {
             this.data = data;
             this.next = null;
@@ -14,18 +15,16 @@ public class MyQueue {
     }
 
 
-
     public void displayReversed() {
         Node temp =  front;
         int[] arr = new int[this.size];
-        // while (temp != null) {
-            for (int i = 0; i < arr.length; i++) {
-                arr[i] = temp.data;
-                temp = temp.next;
+        while (temp != null) {
+            for (int i = 0; i < arr.length; i++) { 
+                arr[i] = temp.data; 
+                temp = temp.next; 
             }
-        // }
-
-        for (int i = arr.length; i >= 0 ; i--) {
+        }
+        for (int i = arr.length - 1; i >= 0; i--) {  // -1
             System.out.print(arr[i] + " ");
         }
 
@@ -62,7 +61,7 @@ public class MyQueue {
             System.out.println("Queue is Empty ");
             return;
         } else {
-            System.out.println("Dequeued value = "+ front.data);
+            System.out.println("Dequeued value = " + front.data);
             front = front.next;
         }
         this.size--;
@@ -82,8 +81,27 @@ public class MyQueue {
         return front.data;
     }
 
+    public int sumOfAll() {
+        int sum = 0;
+        Node temp = front;
+        while (temp != null) {
+            sum += temp.data;
+            temp = temp.next;
+        }
+        return sum;
+    }
 
+    public int searchByIndex(int idx) {
+        int val = 0;
+        Node temp = front;
+        // while (temp != null) {
+            for (int i = 0; i <= idx; i++) {
+                val = temp.data;
+                temp = temp.next;
+            }
+        // }
 
-
+        return val;
+    }
 
 }
